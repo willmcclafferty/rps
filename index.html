@@ -12,11 +12,23 @@
 
 <script>
     function getComputerChoice() {
-        //I will use math random to pick a number and if 0-.333 one option, etc.//
-       return Math.random ();
+        //I will use math random to pick a number//
+       let randomNum = Math.random ();
+       //and if 0-.333 one option, etc //
+       if (randomNum < 0.33) {
+        return "rock"
+       } else if (randomNum < .66) {
+        return "paper"
+       } else {
+        return "scissors"
+       };
+    
     }
-
     console.log(getComputerChoice());
+
+
+
+
 </script>
 
 </html>
