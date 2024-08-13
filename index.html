@@ -11,10 +11,10 @@
 </body>
 
 <script>
-    function getComputerChoice() {
-        //I will use math random to pick a number//
+    function getComputerChoice() {  
+//I will use math random to pick a number//
        let randomNum = Math.random ();
-       //and if 0-.333 one option, etc //
+//and if 0-.333 one option, etc //
        if (randomNum < 0.33) {
         return "rock"
        } else if (randomNum < .66) {
@@ -25,8 +25,13 @@
     
     }
     console.log(getComputerChoice());
-
-
+//function to ask human their choice using prompt//
+    function getHumanChoice () {
+        let humanChoice = prompt("rock, paper, or scissors?");
+//now return it to the comp??
+        return (humanChoice)
+    }
+    console.log(getHumanChoice());
 
 
 </script>
