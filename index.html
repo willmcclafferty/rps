@@ -11,36 +11,79 @@
 </body>
 
 <script>
+
     function getComputerChoice() {  
 //I will use math random to pick a number//
        let randomNum = Math.random ();
 //and if 0-.333 one option, etc //
        if (randomNum < 0.33) {
-        return "rock"
+        return "comp - rock"
        } else if (randomNum < .66) {
-        return "paper"
+        return "comp - paper"
        } else {
-        return "scissors"
+        return "comp - scissors"
        };
-    
     }
-    console.log(getComputerChoice());
+let computerChoice = getComputerChoice ();
+console.log(computerChoice);
+
+
+
 //function to ask human their choice using prompt//
     function getHumanChoice () {
-        let humanChoice = prompt("rock, paper, or scissors?");
+        let userChoice = prompt("rock, paper, or scissors?");
 //now return it to the comp??
-        return (humanChoice)
+        return (userChoice);
     }
-    console.log(getHumanChoice());
+
+    let humanChoice = getHumanChoice();
+
+    console.log(humanChoice);
+
+  
+
+
 
 //now i need to keep a variable score of the human vs comp// 
 
 let humanScore = 0
 
-let compScore = 0
+let computerScore = 0
+
+//now I make the logic of the game, if a vs b, a wins etc//
+//my friend chatgpt had a more clean way to code the w/l/t//
+
+function playRound(computerChoice, humanChoice) {
+   if (computerChoice === humanChoice) {
+    return "tie";
+   } else if (
+        (computerChoice === "rock" && humanChoice === "scissors") ||
+        (computerChoice === "paper" && humanChoice === "rock") ||
+        (computerChoice === "scissors" && humanChoice === "paper") 
+            ) {
+                return "you lose";
+    } else {
+        return "you win";
+    } 
+
+    
+}
+console.log(playRound(computerChoice, humanChoice));
 
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
+playround(humanSelection, computerSelection); {
+    if ("you win") {
+        humanScore +1
+    } else ("you lose") {
+        computerScore +1
+    }
+
+}
 </script>
+
+
 
 </html>
