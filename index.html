@@ -53,33 +53,33 @@ let computerScore = 0
 //now I make the logic of the game, if a vs b, a wins etc//
 //my friend chatgpt had a more clean way to code the w/l/t//
 
-function playRound(computerChoice, humanChoice) {
-   if (computerChoice === humanChoice) {
-    return "tie";
+
+
+function playGame(playRound, playRound, playRound, playRound, playRound) {
+    function playRound(computerChoice, humanChoice) {
+    if (computerChoice === humanChoice) {
+        return "tie";
    } else if (
         (computerChoice === "rock" && humanChoice === "scissors") ||
         (computerChoice === "paper" && humanChoice === "rock") ||
         (computerChoice === "scissors" && humanChoice === "paper") 
             ) {
+                computerScore ++;
                 return "you lose";
     } else {
-        return "you win";
+                humanScore ++;
+                return "you win";
+
     } 
 
     
 }
 console.log(playRound(computerChoice, humanChoice));
-
+console.log("Computer Score; " + computerScore)
+console.log("Human Score; " + humanScore)
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-
-playround(humanSelection, computerSelection); {
-    if ("you win") {
-        humanScore +1
-    } else ("you lose") {
-        computerScore +1
-    }
 
 }
 </script>
