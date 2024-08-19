@@ -17,11 +17,11 @@ function playGame (playRound) {
        let randomNum = Math.random ();
 //and if 0-.333 one option, etc //
        if (randomNum < 0.33) {
-        return "comp - rock"
+        return "rock"
        } else if (randomNum < .66) {
-        return "comp - paper"
+        return "paper"
        } else {
-        return "comp - scissors"
+        return "scissors"
        };
     }
 let computerChoice = getComputerChoice ();
@@ -42,9 +42,6 @@ console.log(computerChoice);
 
 //now i need to keep a variable score of the human vs comp// 
 
-let humanScore = 0 
-
-let computerScore = 0
 
 //now I make the logic of the game, if a vs b, a wins etc//
 //my friend chatgpt had a more clean way to code the w/l/t//
@@ -62,9 +59,7 @@ let computerScore = 0
     } else {
                 humanScore ++;
                 return "you win";
-
     } 
-
 }
 console.log(playRound(computerChoice, humanChoice));
 console.log("Computer Score; " + computerScore)
@@ -75,6 +70,12 @@ const computerSelection = getComputerChoice();
 
 }
 
+let humanScore = 0 
+let computerScore = 0
+
+console.log (playGame());
+console.log (playGame());
+console.log (playGame());
 console.log (playGame());
 console.log (playGame());
 
