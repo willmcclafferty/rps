@@ -13,7 +13,9 @@
 </body>
 
 <script>
-function playGame (playRound) { 
+let humanScore = 0 
+let computerScore = 0
+
     function getComputerChoice() {  
 //I will use math random to pick a number//
        let randomNum = Math.random ();
@@ -26,17 +28,9 @@ function playGame (playRound) {
         return "scissors"
        };
     }
-let computerChoice = getComputerChoice ();
-console.log(computerChoice);
-
 
 
 //function to ask human their choice using prompt//
-    function getHumanChoice () {
-        let userChoice = prompt("rock, paper, or scissors?");
-//now return it to the comp??
-        return (userChoice);
-    }
 const rock = document.getElementById("rock")
 const paper = document.getElementById("paper")
 const scissors = document.getElementById("scissors")
@@ -53,10 +47,7 @@ paper.addEventListener("click", function () {
 scissors.addEventListener("click", function () {
     playRound("scissors");
 })
-
-let humanChoice = getHumanChoice();
-
-    console.log(humanChoice);
+ 
 
 //now i need to keep a variable score of the human vs comp// 
 
@@ -64,7 +55,14 @@ let humanChoice = getHumanChoice();
 //now I make the logic of the game, if a vs b, a wins etc//
 //my friend chatgpt had a more clean way to code the w/l/t//
 
-    function playRound(computerChoice, humanChoice) {
+    function playRound(humanChoice) {
+let computerChoice = getComputerChoice ();
+    console.log(computerChoice);
+
+let computerChoice = getComputerChoice();
+    console.log("Computer chose:", computerChoice);
+    console.log("You chose:", humanChoice);
+
     if (computerChoice === humanChoice) {
         return "tie";
    } else if (
@@ -79,17 +77,11 @@ let humanChoice = getHumanChoice();
                 return "you win";
     } 
 }
-console.log(playRound(computerChoice, humanChoice));
+console.log(playRound(humanChoice));
 console.log("Computer Score; " + computerScore)
 console.log("Human Score; " + humanScore)
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 }
-
-let humanScore = 0 
-let computerScore = 0
 
 </script>
 
