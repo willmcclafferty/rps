@@ -7,7 +7,9 @@
 </head>
 
 <body>
-
+<button id="rock" type="button">rock</button>
+<button id="paper" type="button">paper</button>
+<button id="scissors" type="button">scissors</button>
 </body>
 
 <script>
@@ -35,8 +37,24 @@ console.log(computerChoice);
 //now return it to the comp??
         return (userChoice);
     }
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
 
-    let humanChoice = getHumanChoice();
+rock.addEventListener("click", function () {
+    playRound("rock");
+})
+
+paper.addEventListener("click", function () {
+    playRound("paper");
+})
+
+
+scissors.addEventListener("click", function () {
+    playRound("scissors");
+})
+
+let humanChoice = getHumanChoice();
 
     console.log(humanChoice);
 
@@ -73,15 +91,84 @@ const computerSelection = getComputerChoice();
 let humanScore = 0 
 let computerScore = 0
 
-console.log (playGame());
-console.log (playGame());
-console.log (playGame());
-console.log (playGame());
-console.log (playGame());
-
-
 </script>
 
 
 
 </html>
+
+<!-- 
+let n = 10;
+
+nextPrime:
+for (let i = 2; i <= n; i++) { // for each i...
+
+  for (let j = 2; j < i; j++) { // look for a divisor..
+    if (i % j == 0) continue nextPrime; // not a prime, go next i
+  }
+
+  alert( i ); // a prime
+}
+
+
+let n = 10;
+
+nextPrime:
+for (let i = 2; i <=n; i++) {
+
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextPrime
+    }
+    alert ( i );
+}
+
+
+
+
+
+
+
+let num = prompt("give me a number plz", 0)
+
+for (let i = num; num > 1; i--) {
+    if (i % === 0)
+    alert(i)
+}
+
+
+Ask for a number 
+
+take the number and loop if the number % ===0, continue to loop until
+it goes down to 2. 
+
+alert those numbers. 
+
+
+let num;
+
+do {
+    num = prompt("enter a number ya'll", 0);
+}
+
+for (let num = prompt("enter a number"); ;)
+
+
+let num;
+
+do {
+    num = prompt("enter a number greater than 100", 0);
+    alert(if num % === 0)
+}
+while (numer <= 100 && num);
+
+FOR WHILE THE number 
+
+for (let i = 0; i < 10; i++) {
+
+    if (i % 2) {
+      alert( i );
+    }
+  
+  }
+
+-->
