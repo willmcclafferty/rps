@@ -7,6 +7,12 @@
 </head>
 
 <body>
+<div class="score">
+    <h2>score</h2>
+    <p id="choice-display">choice</p>
+    <p id="result-display">result</p>
+</div>
+
 <button id="rock" type="button">rock</button>
 <button id="paper" type="button">paper</button>
 <button id="scissors" type="button">scissors</button>
@@ -57,6 +63,11 @@ scissors.addEventListener("click", function () {
 
     function playRound(humanChoice) {
 let computerChoice = getComputerChoice ();
+
+let messageElement = document.getElementById("choice-display");
+messageElement.innerText = `You chose: ${humanChoice} | Computer chose: ${computerChoice}`;
+
+
     
     console.log("Computer chose:", computerChoice);
     console.log("You chose:", humanChoice);
