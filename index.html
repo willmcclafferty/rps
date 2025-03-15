@@ -57,13 +57,13 @@ scissors.addEventListener("click", function () {
 
     function playRound(humanChoice) {
 let computerChoice = getComputerChoice ();
-    console.log(computerChoice);
-
-let computerChoice = getComputerChoice();
+    
     console.log("Computer chose:", computerChoice);
     console.log("You chose:", humanChoice);
 
     if (computerChoice === humanChoice) {
+        console.log("it's a tie!");
+        updateScores();
         return "tie";
    } else if (
         (computerChoice === "rock" && humanChoice === "scissors") ||
@@ -71,16 +71,19 @@ let computerChoice = getComputerChoice();
         (computerChoice === "scissors" && humanChoice === "paper") 
             ) {
                 computerScore ++;
+                console.log("you lose this round!");
+                updateScores();
                 return "you lose";
     } else {
                 humanScore ++;
+                console.log("you win this round!");
+                updateScores();
                 return "you win";
     } 
 }
-console.log(playRound(humanChoice));
-console.log("Computer Score; " + computerScore)
-console.log("Human Score; " + humanScore)
-
+function updateScores (){
+console.log("Computer Score; " + computerScore);
+console.log("Human Score; " + humanScore);
 }
 
 </script>
