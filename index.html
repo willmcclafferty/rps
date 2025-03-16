@@ -11,6 +11,8 @@
     <h2>score</h2>
     <p id="choice-display">choice</p>
     <p id="result-display">result</p>
+    <p id="human-score">human score</p>
+    <p id="computer-score">comp score</p>
 </div>
 
 <button id="rock" type="button">rock</button>
@@ -21,6 +23,7 @@
 <script>
 let humanScore = 0 
 let computerScore = 0
+let gameOver = false;
 
     function getComputerChoice() {  
 //I will use math random to pick a number//
@@ -62,18 +65,17 @@ scissors.addEventListener("click", function () {
 //my friend chatgpt had a more clean way to code the w/l/t//
 
     function playRound(humanChoice) {
+if(gameOver) return;
+
 let computerChoice = getComputerChoice ();
 
 let messageElement = document.getElementById("choice-display");
 messageElement.innerText = `You chose: ${humanChoice} | Computer chose: ${computerChoice}`;
 
-
-    
-    console.log("Computer chose:", computerChoice);
-    console.log("You chose:", humanChoice);
+let resultDisplay = document.getElementById("result-display");
 
     if (computerChoice === humanChoice) {
-        console.log("it's a tie!");
+        resultDisplay.innerText = "it's a tie!";
         updateScores();
         return "tie";
    } else if (
@@ -82,21 +84,36 @@ messageElement.innerText = `You chose: ${humanChoice} | Computer chose: ${comput
         (computerChoice === "scissors" && humanChoice === "paper") 
             ) {
                 computerScore ++;
-                console.log("you lose this round!");
+                resultDisplay.innerText = "you lose this round!";
                 updateScores();
                 return "you lose";
     } else {
                 humanScore ++;
-                console.log("you win this round!");
+                resultDisplay.innerText = "you win this round!";
                 updateScores();
                 return "you win";
     } 
-}
-function updateScores (){
-console.log("Computer Score; " + computerScore);
-console.log("Human Score; " + humanScore);
-}
+    
+    resultDisplay.innerText = `Result: ${roundResult}`;
+    }
 
+    updateScores();
+
+console.log("Human Score:", humanScore);
+console.log("Computer Score:", computerScore);
+
+
+function updateScores (){
+    let humanScoreDisplay = document.getElementById("human-score");
+    let computerScoreDisplay = document.getElementById("computer-score");
+
+computerScoreDisplay.innerText = "Computer Score: " + computerScore;
+humanScoreDisplay.innerText = "Human Score: " + humanScore;
+
+if (computerScore >= 5 || humanScore >= 5) {
+gameOver = true;
+alert("GAME OVER")
+}}
 </script>
 
 
